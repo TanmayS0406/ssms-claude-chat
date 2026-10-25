@@ -157,3 +157,4 @@ kbd { font-family: inherit; font-size: .85em; border: 1px solid var(--border); b
 
 /* GitHub Sponsors card */
 .sponsor-card { display: block; max-width: 100%; margin-top: 16px; }
+.sec-banner { display: block; width: 100%; height: auto; margin: 20px 0; }
