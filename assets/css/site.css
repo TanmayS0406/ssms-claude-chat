@@ -154,3 +154,6 @@ kbd { font-family: inherit; font-size: .85em; border: 1px solid var(--border); b
 .sev-high { background: #ffedd5; color: #9a3412; }
 .sev-medium { background: #fef9c3; color: #854d0e; }
 .sev-low { background: var(--surface); color: var(--muted); }
+
+/* GitHub Sponsors card */
+.sponsor-card { display: block; max-width: 100%; margin-top: 16px; }

@@ -58,7 +58,10 @@ request.
 
 ## Support the project
 
-SSMS Claude Chat is free. If it saves you time, please consider [sponsoring](https://github.com/sponsors/TanmayS0406).
+SSMS Claude Chat is free. If it saves you time, please consider sponsoring. It keeps the project maintained and
+pays for code signing and hosting.
+
+[![Sponsor TanmayS0406 on GitHub](https://img.shields.io/badge/Sponsor-%E2%9D%A4%20TanmayS0406-db61a2?style=for-the-badge&logo=githubsponsors&logoColor=white)](https://github.com/sponsors/TanmayS0406)
 
 ---
 
