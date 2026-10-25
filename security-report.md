@@ -14,6 +14,8 @@ automatically after each scan.
 {% assign r = site.data.security %}
 {% if r %}
 
+<img class="sec-banner" src="{{ '/security/banner.svg' | relative_url }}?v={{ r.generated | date: '%s' }}" alt="SSMS Claude Chat security scan: {% if r.status == 'pass' %}all security checks passed{% else %}some checks need attention{% endif %}, last scan {{ r.generated | date: '%-d %B %Y' }}">
+
 <div class="sec-summary sec-{{ r.status }}">
   <div class="sec-big">{% if r.status == 'pass' %}✅ All security checks passed{% else %}⚠️ Some checks need attention{% endif %}</div>
   <div>Last scan: <strong>{{ r.generated | date: "%-d %B %Y, %H:%M UTC" }}</strong>{% if r.release and r.release != '' %} · Latest release: <strong>{{ r.release }}</strong>{% endif %} · Code version: <code>{{ r.commit }}</code></div>
