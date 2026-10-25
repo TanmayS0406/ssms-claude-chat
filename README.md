@@ -5,7 +5,7 @@ are connected to: it explains and writes stored procedures, runs SQL with your a
 and edits your SQL repository. You sign in with your own Claude account.
 
 [**Website & documentation**](https://tanmays0406.github.io/ssms-claude-chat/) ·
-[Download](https://sbsbuilds1998.blob.core.windows.net/downloads/1.4.8/SsmsClaudeChat-Setup-1.4.8.exe) ·
+[Download](https://sbsbuilds1998.blob.core.windows.net/downloads/1.4.9/SsmsClaudeChat-Setup-1.4.9.exe) ·
 [Report an issue](https://github.com/TanmayS0406/ssms-claude-chat/issues) ·
 [♥ Sponsor](https://github.com/sponsors/TanmayS0406)
 

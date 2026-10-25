@@ -9,8 +9,8 @@ markdown: kramdown
 
 # Newest setup. Update both lines when a new version is released
 # (the extension's build pipeline writes the current one to .../downloads/version.json).
-latest_version: 1.4.8
-download_url: https://sbsbuilds1998.blob.core.windows.net/downloads/1.4.8/SsmsClaudeChat-Setup-1.4.8.exe
+latest_version: 1.4.9
+download_url: https://sbsbuilds1998.blob.core.windows.net/downloads/1.4.9/SsmsClaudeChat-Setup-1.4.9.exe
 
 repository_url: https://github.com/TanmayS0406/ssms-claude-chat
 issues_url: https://github.com/TanmayS0406/ssms-claude-chat/issues
