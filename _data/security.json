@@ -1,8 +1,8 @@
 {
-  "generated": "2026-10-25T08:29:12Z",
+  "generated": "2026-10-25T09:47:23Z",
   "status": "pass",
-  "commit": "56dee2c",
-  "release": "v1.4.13",
+  "commit": "a9551a6",
+  "release": "v1.4.17",
   "trigger": "push",
   "signed": false,
   "checks": [
@@ -103,7 +103,7 @@
       "about": "Grades how the project is run: reviews, pinned dependencies, token permissions and more.",
       "fails_on": "none",
       "note": null,
-      "result": "pass",
+      "result": "skipped",
       "findings": null
     }
   ]
