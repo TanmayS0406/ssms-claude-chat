@@ -1,0 +1,35 @@
+name: Bug report
+description: Something in SSMS Claude Chat does not work as expected
+labels: [bug]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened?
+      description: What you did, what you expected, and what happened instead. Screenshots help.
+    validations:
+      required: true
+  - type: input
+    id: extension
+    attributes:
+      label: Extension version
+      placeholder: "1.4.8 (SSMS: Extensions > Manage Extensions)"
+    validations:
+      required: true
+  - type: input
+    id: ssms
+    attributes:
+      label: SSMS version
+      placeholder: "22.0"
+    validations:
+      required: true
+  - type: input
+    id: claude
+    attributes:
+      label: Claude Code CLI version
+      placeholder: "output of: claude --version"
+  - type: textarea
+    id: logs
+    attributes:
+      label: Error text or status line
+      render: text

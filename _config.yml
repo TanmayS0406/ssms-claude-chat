@@ -1,0 +1,35 @@
+title: SSMS Claude Chat
+description: >-
+  A dockable Claude chat window for SQL Server Management Studio 21 / 22. Claude reads your database, explains and
+  writes stored procedures, runs SQL with your approval, draws ER and flow diagrams and edits your SQL repository.
+url: https://tanmays0406.github.io
+baseurl: /ssms-claude-chat
+permalink: pretty
+markdown: kramdown
+
+# Newest setup. Update both lines when a new version is released
+# (the extension's build pipeline writes the current one to .../downloads/version.json).
+latest_version: 1.4.8
+download_url: https://sbsbuilds1998.blob.core.windows.net/downloads/1.4.8/SsmsClaudeChat-Setup-1.4.8.exe
+
+repository_url: https://github.com/TanmayS0406/ssms-claude-chat
+issues_url: https://github.com/TanmayS0406/ssms-claude-chat/issues
+sponsor_url: https://github.com/sponsors/TanmayS0406
+publisher: Tanmay Seth
+publisher_url: https://sethbusinesssolutions.online
+
+nav:
+  - title: Getting started
+    url: /getting-started/
+  - title: Features
+    url: /features/
+  - title: Settings
+    url: /settings/
+  - title: Themes
+    url: /themes/
+  - title: FAQ
+    url: /faq/
+
+exclude:
+  - README.md
+  - CONTRIBUTING.md

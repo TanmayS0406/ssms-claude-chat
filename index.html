@@ -1,0 +1,67 @@
+---
+layout: default
+layout_hero: true
+---
+<main>
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="eyebrow">Extension for SSMS 21 / 22</div>
+        <h1>Claude, inside SQL&nbsp;Server Management Studio.</h1>
+        <p class="lead">
+          A dockable chat window that understands the database you are connected to. Ask why a procedure is slow,
+          get an ER diagram of a schema, or have Claude write and deploy a change. Nothing runs without your approval.
+        </p>
+        <div class="btn-row">
+          <a class="btn btn-primary" href="{{ site.download_url }}">⬇ Download {{ site.latest_version }}</a>
+          <a class="btn" href="{{ '/getting-started/' | relative_url }}">Get started</a>
+          <a class="btn btn-sponsor" href="{{ site.sponsor_url }}">♥ Sponsor</a>
+        </div>
+        <div class="meta">Free · Windows · Signs in with your own Claude account · No admin rights needed</div>
+      </div>
+      <div class="shot-stack">
+        <img class="shot" src="{{ '/assets/img/chat-claudedark.png' | relative_url }}" alt="SSMS Claude Chat window, Claude Dark theme">
+        <img class="shot" src="{{ '/assets/img/chat-light.png' | relative_url }}" alt="SSMS Claude Chat window, Light theme">
+      </div>
+    </div>
+  </section>
+
+  <section class="band alt">
+    <div class="wrap">
+      <h2>What it does</h2>
+      <p class="sub">Claude gets tools for the active query window's server and database, and your SQL repository.</p>
+      <div class="grid">
+        <div class="card"><div class="icon">🔎</div><h3>Understands your database</h3><p>Lists databases and objects, describes tables, keys, indexes and procedures, follows dependencies and runs read-only queries.</p></div>
+        <div class="card"><div class="icon">🧩</div><h3>Stored procedures</h3><p>Explains a procedure from its definition and dependencies, writes <code>CREATE OR ALTER</code> scripts, deploys and runs them when you ask.</p></div>
+        <div class="card"><div class="icon">🗺️</div><h3>Diagrams</h3><p>Flowcharts of procedures and ER diagrams, including relationships inferred across databases. One-click DB diagram uses no tokens.</p></div>
+        <div class="card"><div class="icon">✋</div><h3>You stay in control</h3><p>Changes to the database are off, ask-every-time (default) or allowed. The approval dialog shows the SQL, server, database and reason.</p></div>
+        <div class="card"><div class="icon">📝</div><h3>Edits query windows and files</h3><p>Rewrites, opens or executes query windows, and edits the SQL scripts in your repository folder.</p></div>
+        <div class="card"><div class="icon">📎</div><h3>Attachments and history</h3><p>Attach execution plans, logs, CSV files and screenshots. Every chat is saved and can be resumed later.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap">
+      <h2>Make it yours</h2>
+      <p class="sub">Eight themes, from <em>Follow SSMS</em> to Claude, Midnight and Nord, with an accent colour of your choice. <a href="{{ '/themes/' | relative_url }}">More about themes →</a></p>
+      <div class="gallery">
+        <figure><img class="shot" src="{{ '/assets/img/theme-midnight.png' | relative_url }}" alt="Theme picker, Midnight theme"><figcaption>Theme picker · Midnight</figcaption></figure>
+        <figure><img class="shot" src="{{ '/assets/img/settings-claude.png' | relative_url }}" alt="Settings, Claude theme"><figcaption>Settings · Claude</figcaption></figure>
+        <figure><img class="shot" src="{{ '/assets/img/history-nord.png' | relative_url }}" alt="Chat history, Nord theme"><figcaption>History · Nord</figcaption></figure>
+        <figure><img class="shot" src="{{ '/assets/img/empty-dark.png' | relative_url }}" alt="New chat, Dark theme"><figcaption>New chat · Dark</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="band alt cta">
+    <div class="wrap">
+      <h2>Enjoying SSMS Claude Chat?</h2>
+      <p class="sub">It's free. Sponsoring keeps it maintained and pays for code signing and hosting.</p>
+      <div class="btn-row">
+        <a class="btn btn-primary" href="{{ site.sponsor_url }}">♥ Sponsor on GitHub</a>
+        <a class="btn" href="{{ site.issues_url }}">Suggest a feature</a>
+      </div>
+    </div>
+  </section>
+</main>
