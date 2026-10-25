@@ -1,55 +1,82 @@
 ---
 layout: default
-title: FAQ
+title: SSMS Claude Chat FAQ and help
+description: Answers to common questions about SSMS Claude Chat, the Claude AI add-in for SQL Server Management Studio. Cost, supported SSMS versions, privacy, safety and fixes for common problems.
 ---
 
-# FAQ and troubleshooting
+# SSMS Claude Chat: questions and answers
 
-## "Claude Code CLI not found"
+## About SSMS Claude Chat
 
-Install Claude Code from [claude.com/claude-code](https://claude.com/claude-code), then click the refresh icon
-next to the sign-in status. If it is installed somewhere unusual, set **Settings > Claude Code CLI path** to the
-full path of `claude.exe` or `claude.cmd`.
+### What is SSMS Claude Chat?
 
-## I don't see the window in SSMS
+A free add-in (extension) for SQL Server Management Studio that adds a Claude AI chat window. You can ask about
+your database in plain English, get SQL explained or written, fix slow queries and draw diagrams.
 
-Open it from **View > SSMS Claude Chat**. If the menu item is missing, close SSMS and run the setup again. If SSMS
-lives in a non-standard folder, pass `/SSMSPATH="...\Common7\IDE"` to the setup.
+### Is it free?
 
-## Database tools say there is no connection
+Yes, SSMS Claude Chat is free. You do need your own Claude plan (Pro, Max, Team or Enterprise) or a Claude
+Console account, because the answers come from Claude.
 
-The tools use the **active query window**. Click into a query window that is connected, then ask again. For
-Microsoft Entra logins that cannot be reused from SSMS, set a **connection string override** in Settings.
+### Which versions of SSMS does it work with?
 
-## Can Claude change my database without asking?
+SSMS 21 and SSMS 22 on Windows. Older versions (SSMS 20, 19, 18) aren't supported.
 
-Only if you choose **Allow without asking** in Settings. The default asks before every change and shows the SQL.
-`run_query` is read-only by design: statements that write, `EXEC`, transactions, `USE`, `OPENROWSET` and similar
-are rejected, and every query also runs inside a transaction that is always rolled back.
+### Does it work with Azure SQL?
 
-## What is sent to Claude?
+Yes. It uses the same connection as your query window, so it works with anything SSMS can connect to, including
+SQL Server, Azure SQL Database and Azure SQL Managed Instance.
 
-Your messages, the query context (if the chip is on), attachments, and whatever the tools return when Claude
-calls them: object definitions, query results, file contents in the repository folder. It goes through the Claude
-Code CLI under your own Claude account. See [Anthropic's privacy policy](https://www.anthropic.com/legal/privacy).
+### Where do I download it?
 
-## What is stored on my machine?
+From the [SSMS Claude Chat download page]({{ site.download_url }}). It always has the newest version. See
+[How to install](../getting-started/).
 
-Everything is under `%LOCALAPPDATA%\SsmsChatExtension`:
+## Safety and privacy
 
-| Folder / file | Contents |
-| --- | --- |
-| `settings.json` | Settings, theme and accent (connection string override DPAPI-encrypted) |
-| `history\` | One JSON file per chat |
-| `attachments\` | Copies of attached files, kept 30 days |
-| `diagrams\` | Generated diagram pages |
+### Can Claude change my database without asking?
 
-## The diagram page is blank
+No, not unless you turn on **Allow without asking** in Settings. By default, every change shows you the exact SQL
+and waits for you to click **Yes**. When Claude only looks at data, it can't change anything.
 
-Rendering loads Mermaid from cdn.jsdelivr.net, so it needs internet access. The diagram source is always on the
-page.
+### What does Claude see?
 
-## Something else?
+Only what it needs to answer you: your messages, the text you've selected in the query window, files you attach,
+and the table definitions or query results it looks up. It goes to Claude under your own account. See
+[Anthropic's privacy policy](https://www.anthropic.com/legal/privacy).
 
-[Open an issue]({{ site.issues_url }}). Please include your SSMS version, the extension version and what you
-expected to happen.
+### Is my Claude password stored?
+
+No. You sign in to Claude in your browser. SSMS Claude Chat never sees your password.
+
+### What is saved on my computer?
+
+Your settings, chat history, attachment copies (kept 30 days) and diagrams, all in your Windows profile under
+`%LOCALAPPDATA%\SsmsChatExtension`. Delete that folder to remove everything.
+
+## Problems
+
+### I can't find the chat window in SSMS
+
+Click **View > SSMS Claude Chat**. If it isn't in the menu, close SSMS and run the setup again.
+
+### It says "Claude Code CLI not found"
+
+Install [Claude Code](https://claude.com/claude-code), then click the refresh button next to the sign-in status.
+If you installed it in an unusual place, set its location in **Settings**.
+
+### It says there is no connection
+
+Click into a query window that's connected to a database, then ask again.
+
+### Windows warns me when I run the setup
+
+Click **More info**, then **Run anyway**. This can happen with any newly released download.
+
+### The diagram page is blank
+
+Diagrams need an internet connection to draw. The diagram text is still shown on the page.
+
+### Something else?
+
+[Report a problem]({{ site.issues_url }}) and tell us your SSMS version and what happened.

@@ -1,84 +1,80 @@
 ---
 layout: default
-title: Features
+title: What SSMS Claude Chat can do
+description: SSMS Claude Chat answers questions about your SQL Server database, explains and writes stored procedures, helps fix slow queries and draws ER diagrams inside SSMS.
 ---
 
-# Features
+# What SSMS Claude Chat can do
 
-Claude is instructed to stay on topic: SQL Server, T-SQL, stored procedures, schema design, performance, SSMS and
-the scripts in your repository. Other requests get a one-line polite refusal.
+SSMS Claude Chat is an AI helper for people who work with SQL Server. It always works with the server and
+database of the query window you're in, so you never have to explain your setup.
 
-## Understands your database
+## Answers questions about your database
 
-Claude gets tools for the server and database of the **active query window**:
+Ask things like:
 
-| Tool | What it does |
-| --- | --- |
-| `get_connection_info` | Server, database and login of the active window |
-| `list_databases`, `list_objects` | What is there |
-| `describe_object` | Columns, keys, indexes, foreign keys, parameters, row count and the full definition |
-| `get_dependencies` | What an object uses and what uses it |
-| `run_query` | Read-only queries (always rolled back, 30 s timeout, row limit) |
+- *What tables are in this database, and what are they for?*
+- *Which procedures use the Customers table?*
+- *How many orders were placed last month?*
 
-## Stored procedures
+Claude looks at your tables, columns, keys and procedures to answer. When it needs data it only *reads*, and it
+can't change anything this way.
 
-Claude reads a procedure's definition and dependencies before explaining it, writes new or changed procedures as
-`CREATE OR ALTER` in the editor or your repository, deploys them with `execute_sql` when you ask, and runs them
-with `EXEC`, subject to the [database change setting](../settings/#database-changes).
+## Explains and writes stored procedures
 
-## Diagrams
+- **Explain:** "What does dbo.usp_MonthlyRevenue do?" gets you a plain-English walk-through.
+- **Write:** describe what you need and Claude writes the procedure, either in your query window or as a file.
+- **Run:** when you're happy, Claude can create it in the database, after you approve.
 
-- Ask for a flowchart of a procedure, an ER diagram of some tables or a call chain, and Claude opens a Mermaid
-  diagram in your browser with *Download SVG* and *Copy source* buttons.
-- The **DB diagram** button draws an ER diagram straight from the catalog, with no AI call and no tokens used.
-  Tick one or more databases (and optionally a schema):
-  - **Solid lines** are declared foreign keys.
-  - **Dashed lines** are *inferred* relationships, e.g. `Invoices.CustomerId` → `Customers.Id`, including links
-    **across databases**, which SQL Server cannot declare. Review them; they are guesses.
-  - Each database gets its own colour. Large selections are trimmed to 200 tables.
+## Helps fix slow queries
 
-## Runs SQL for you, with your approval
+Ask "why is this slow?" about a query or procedure, or attach its execution plan (`.sqlplan` file). Claude
+explains the cause in simple terms and suggests a fix, such as a better index or a rewrite.
 
-`execute_sql` runs any script (`INSERT` / `UPDATE` / `DELETE`, `CREATE` / `ALTER`, `EXEC`, `GO` batches) and
-`execute_query_window` presses F5 on the active query window so you see the results grid. By default SSMS shows
-the SQL, the server / database and Claude's reason first, and nothing runs unless you click **Yes**.
+## Draws database diagrams
 
-After objects are created, altered or dropped, Object Explorer and IntelliSense refresh automatically.
+- **ER diagrams in one click:** the **DB diagram** button draws your tables and how they connect. It works across
+  several databases and doesn't use any of your Claude allowance.
+  - Solid lines are links defined in the database.
+  - Dashed lines are links Claude Chat *guessed* from column names (for example `Orders.CustomerId` →
+    `Customers.Id`). Check these.
+- **Flowcharts:** ask "draw a flowchart of this procedure" and it opens in your browser, ready to save as an image.
 
-## Edits query windows and your repository
+## Never changes your database without asking
 
-- `get_query_window`, `replace_query_window` (one <kbd>Ctrl</kbd>+<kbd>Z</kbd> undoes it) and
-  `open_new_query_window` (connected like the active window).
-- Claude works in the *repository folder* from Settings and can create and edit files there. Read-only
-  `git status / diff / log / show` are always allowed.
+When Claude wants to run something that changes your database, such as adding a row, creating an index or
+changing a procedure, a box pops up showing:
 
-## Attachments
+- the exact SQL it wants to run,
+- which server and database it will run on,
+- and why.
 
-**Attach** (paper clip) picks files: SQL scripts, `.sqlplan` execution plans, logs, CSV, images, PDF (up to 10
-per message, 20 MB each). You can also drop files on the message box. **Screenshot** opens the Windows snipping
-overlay; <kbd>Ctrl</kbd>+<kbd>V</kbd> in the message box attaches a copied image or copied files.
+Nothing happens unless you click **Yes**. You can also switch changes off completely in
+[Settings](../settings/#database-changes).
 
-## Chat history
+## Works with your query windows and script files
 
-Every conversation is saved to `%LOCALAPPDATA%\SsmsChatExtension\history`. Opening one from **History** continues
-the same Claude session, so Claude still remembers it.
+Claude can read and rewrite the query window you're in (<kbd>Ctrl</kbd>+<kbd>Z</kbd> undoes it), open new query
+windows, and edit the SQL script files in a folder you choose.
 
-![History]({{ '/assets/img/history-nord.png' | relative_url }})
+## Attach files and screenshots
 
-## Model and effort
+Click the paper clip to attach SQL scripts, execution plans, log files, spreadsheets (CSV), images or PDFs. You
+can also drag files in, paste with <kbd>Ctrl</kbd>+<kbd>V</kbd>, or click **Screenshot** to snip part of your
+screen.
 
-Pick the model (`opus`, `sonnet`, `haiku`, `fable`, or type any model id) and the effort level (`low` … `max`) in
-Settings; the header shows what is active.
+## Remembers your conversations
 
-## How it works
+Every chat is saved. Open **History** to pick one up again; Claude remembers what you talked about.
 
-```
-SSMS Claude Chat window ──stdin──▶ claude -p --output-format stream-json --resume <session>   (cwd = repository folder)
-       ▲                         │  built-in tools: Read / Edit / Write / Grep ... inside the repository
-       └──── streamed reply ─────┤
-                                 └─ MCP over http://127.0.0.1:<random port>/mcp  (random bearer token)
-                                        └─ "ssms" tools inside SSMS: database + query windows
-```
+![SSMS Claude Chat chat history]({{ '/assets/img/history-nord.png' | relative_url }})
 
-Database tools use the connection of the active query window, created by SSMS itself, so Windows, SQL and
-Microsoft Entra logins all work.
+## Choose the Claude model
+
+In [Settings](../settings/) you can pick which Claude model to use (faster or smarter) and how hard it should
+think.
+
+## Works with any SQL Server login
+
+SSMS Claude Chat uses the same connection as your query window, so Windows logins, SQL logins and Microsoft Entra
+(Azure AD) logins all work. Claude can only see and do what your login is allowed to.

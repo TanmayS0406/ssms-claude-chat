@@ -1,65 +1,65 @@
 ---
 layout: default
-title: Getting started
+title: How to install SSMS Claude Chat
+description: Install SSMS Claude Chat in SQL Server Management Studio 21 or 22, sign in with your Claude account and ask your first question. Takes about five minutes.
 ---
 
-# Getting started
+# How to install SSMS Claude Chat
 
-Install the extension, sign in with Claude and ask your first question. It takes about five minutes.
+Setup takes about five minutes.
 
-## Requirements
+## What you need
 
-- **SQL Server Management Studio 21 or 22** on Windows (x64 or Arm64).
-- **Claude Code CLI** (`claude`) on the same machine. Install it from
-  [claude.com/claude-code](https://claude.com/claude-code): the native installer (`~/.local/bin/claude.exe`)
-  or `npm i -g @anthropic-ai/claude-code`. The chat window finds it on `PATH` or in those folders; otherwise set
-  its path in **Settings**.
-- A **Claude subscription** (Pro, Max, Team or Enterprise) or a Claude Console account to sign in with.
+- **SQL Server Management Studio (SSMS) 21 or 22** on Windows.
+- **A Claude account** with a Pro, Max, Team or Enterprise plan, or a Claude Console account.
+- **Claude Code**, Anthropic's free helper program that SSMS Claude Chat uses to talk to Claude.
+  [Install it from claude.com/claude-code](https://claude.com/claude-code).
 
-## Install
+## Step 1: Download and install
 
-1. [Download the setup]({{ site.download_url }}) (version {{ site.latest_version }}).
-2. Close SSMS and run the setup. It needs no admin rights.
-3. Start SSMS and open **View > SSMS Claude Chat**.
+1. [Download SSMS Claude Chat]({{ site.download_url }}). You always get the newest version.
+2. Close SSMS.
+3. Run the downloaded setup file. You don't need to be an administrator.
 
-Setup finds SSMS 21 / 22 and installs the extension with the `VSIXInstaller.exe` that ships with SSMS
-(double-clicking a `.vsix` does not work for SSMS 21+). Running a newer setup upgrades in place.
+> If Windows shows a blue "Windows protected your PC" box, click **More info**, then **Run anyway**.
 
-| Setup option | Use it when |
-| --- | --- |
-| `/SSMSPATH="D:\...\Release\Common7\IDE"` | SSMS is installed in a non-standard folder |
-| `/VERYSILENT` | Unattended install |
+## Step 2: Open the chat window
 
-> If Windows shows a SmartScreen warning, click **More info > Run anyway**.
+Start SSMS and click **View > SSMS Claude Chat**. You can dock the window wherever you like.
 
-To uninstall: **Settings > Apps > Installed apps > SSMS Claude Chat**.
+## Step 3: Sign in
 
-## Sign in
+Click **Sign in** at the top of the chat window. Your browser opens so you can sign in to Claude. Your password
+never passes through SSMS Claude Chat.
 
-Click **Sign in** at the top of the chat window. It runs the official Claude Code sign-in
-(`claude auth login`) in a console window and your browser. The extension never sees or stores your Claude
-credentials; the CLI keeps them. The sign-out button runs `claude auth logout`.
+## Step 4: Ask your first question
 
-## Your first chat
-
-1. Open a query window connected to the database you want to talk about.
-2. Type a question and press <kbd>Enter</kbd> (<kbd>Shift</kbd>+<kbd>Enter</kbd> adds a new line). For example:
-   - *What does dbo.usp_GetOrders do, and why is it slow for big customers?*
-   - *Draw an ER diagram of the Sales schema.*
+1. Open a query window connected to the database you want to ask about.
+2. Type a question and press <kbd>Enter</kbd>. Some ideas:
+   - *What does dbo.usp_GetOrders do?*
+   - *Why is this query slow?*
+   - *Draw a diagram of the tables in the Sales schema.*
    - *Write a procedure that archives orders older than two years.*
-3. Leave the **Query context** chip on to send the selected text (or the whole query) of the active query
-   window along with your message.
 
-![Chat window]({{ '/assets/img/chat-light.png' | relative_url }})
+Whatever you have selected in the query window is sent along with your question, so you can just say
+"explain this".
 
-## The toolbar
+![SSMS Claude Chat window in SQL Server Management Studio]({{ '/assets/img/chat-light.png' | relative_url }})
 
-| Icon | What it does |
+## The buttons at the top
+
+| Button | What it does |
 | --- | --- |
-| ✎ New chat | Starts a new conversation; the current one stays in History |
-| ⟲ History | Lists saved chats; open one to continue it, or delete it |
-| ⛁ DB diagram | ER diagram of the active connection's databases, drawn from the catalog (no AI call) |
-| 🎨 Theme | Theme and accent colour, see [Themes](../themes/) |
-| ⚙ Settings | Repository folder, permissions, model and effort, see [Settings](../settings/) |
+| ✎ New chat | Starts a fresh conversation (the old one is saved) |
+| ⟲ History | Opens an earlier chat so you can carry on |
+| ⛁ DB diagram | Draws a diagram of your database's tables right away |
+| 🎨 Theme | Changes the colours, see [Themes](../themes/) |
+| ⚙ Settings | Chooses what Claude may do, see [Settings](../settings/) |
 
-Next: [everything Claude can do](../features/).
+## Updating and uninstalling
+
+- **To update**, download and run the newest setup. It replaces the old version.
+- **To uninstall**, open Windows **Settings > Apps > Installed apps**, find **SSMS Claude Chat** and click
+  **Uninstall**.
+
+Next: [see everything SSMS Claude Chat can do](../features/).

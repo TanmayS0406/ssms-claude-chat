@@ -1,16 +1,17 @@
 title: SSMS Claude Chat
+tagline: AI assistant for SQL Server Management Studio (SSMS)
 description: >-
-  A dockable Claude chat window for SQL Server Management Studio 21 / 22. Claude reads your database, explains and
-  writes stored procedures, runs SQL with your approval, draws ER and flow diagrams and edits your SQL repository.
+  SSMS Claude Chat is a free add-in that puts Claude AI inside SQL Server Management Studio (SSMS 21 and 22).
+  Ask questions about your database in plain English, get stored procedures explained, fix slow queries and draw
+  database diagrams. Nothing changes in your database until you click Yes.
 url: https://tanmays0406.github.io
 baseurl: /ssms-claude-chat
 permalink: pretty
 markdown: kramdown
+lang: en
 
-# Newest setup. Update both lines when a new version is released
-# (the extension's build pipeline writes the current one to .../downloads/version.json).
-latest_version: 1.4.9
-download_url: https://sbsbuilds1998.blob.core.windows.net/downloads/1.4.9/SsmsClaudeChat-Setup-1.4.9.exe
+# The download site always serves the newest setup, so this never needs updating.
+download_url: https://ssmsclaudechat.azurewebsites.net/
 
 repository_url: https://github.com/TanmayS0406/ssms-claude-chat
 issues_url: https://github.com/TanmayS0406/ssms-claude-chat/issues
@@ -18,10 +19,19 @@ sponsor_url: https://github.com/sponsors/TanmayS0406
 publisher: Tanmay Seth
 publisher_url: https://sethbusinesssolutions.online
 
+# Search engines: page titles, descriptions, canonical links and social cards (jekyll-seo-tag), and sitemap.xml.
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+author:
+  name: Tanmay Seth
+  url: https://sethbusinesssolutions.online
+image: /assets/img/chat-claudedark.png
+
 nav:
-  - title: Getting started
+  - title: Install
     url: /getting-started/
-  - title: Features
+  - title: What it does
     url: /features/
   - title: Settings
     url: /settings/

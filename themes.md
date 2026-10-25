@@ -1,40 +1,39 @@
 ---
 layout: default
-title: Themes
+title: SSMS Claude Chat themes
+description: Change the look of SSMS Claude Chat in SQL Server Management Studio with eight colour themes, including dark mode, and your own accent colour.
 ---
 
-# Themes
+# SSMS Claude Chat themes
 
-Click the **palette** icon at the top of the chat window to pick a theme and an accent colour. Changes apply right
-away and are remembered.
+Click the **🎨 palette** at the top of the chat window to pick a theme and an accent colour. Changes show
+straight away and are remembered.
 
-![Theme picker]({{ '/assets/img/theme-midnight.png' | relative_url }})
+![SSMS Claude Chat theme picker]({{ '/assets/img/theme-midnight.png' | relative_url }})
 
 ## Themes
 
 | Theme | Look |
 | --- | --- |
-| **Follow SSMS** *(default)* | Uses the colours of the SSMS theme (**Tools > Theme**) and follows it when you switch |
+| **Follow SSMS** *(default)* | Matches your SSMS colours and changes when SSMS does |
 | Light | Clean white |
-| Dark | Neutral dark grey |
+| Dark | Dark grey |
 | Claude | Warm paper with Claude orange |
 | Claude Dark | Warm charcoal with Claude orange |
 | Midnight | Deep navy with indigo |
-| Nord | Arctic blue-grey |
-| Solarized | Solarized light |
+| Nord | Cool blue-grey |
+| Solarized | Soft cream |
 
-## Accent colours
+## Accent colour
 
-The accent colours the Send button, your message bubbles, focus borders and selected options. **Theme default**
-uses the theme's own accent; you can also pick Claude orange, blue, teal, green, purple, pink or amber.
+The accent colours the Send button, your messages and selected options. Pick **Theme default**, or Claude orange,
+blue, teal, green, purple, pink or amber.
 
 ## Examples
 
 | | |
 | --- | --- |
-| ![Claude Dark]({{ '/assets/img/chat-claudedark.png' | relative_url }}) | ![Light]({{ '/assets/img/chat-light.png' | relative_url }}) |
+| ![SSMS Claude Chat, Claude Dark theme]({{ '/assets/img/chat-claudedark.png' | relative_url }}) | ![SSMS Claude Chat, Light theme]({{ '/assets/img/chat-light.png' | relative_url }}) |
 | Claude Dark | Light |
-| ![Nord]({{ '/assets/img/history-nord.png' | relative_url }}) | ![Dark]({{ '/assets/img/empty-dark.png' | relative_url }}) |
+| ![SSMS Claude Chat, Nord theme]({{ '/assets/img/history-nord.png' | relative_url }}) | ![SSMS Claude Chat, Dark theme]({{ '/assets/img/empty-dark.png' | relative_url }}) |
 | Nord | Dark |
-
-Theme and accent are stored as `Theme` and `Accent` in `%LOCALAPPDATA%\SsmsChatExtension\settings.json`.
