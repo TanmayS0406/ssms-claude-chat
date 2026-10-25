@@ -37,9 +37,12 @@ nav:
     url: /settings/
   - title: Themes
     url: /themes/
+  - title: Security
+    url: /security/
   - title: FAQ
     url: /faq/
 
 exclude:
   - README.md
   - CONTRIBUTING.md
+  - SECURITY.md

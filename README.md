@@ -1,5 +1,7 @@
 # ✦ SSMS Claude Chat: Claude AI for SQL Server Management Studio
 
+<a href="https://tanmays0406.github.io/ssms-claude-chat/security/"><img src="https://sbsbuilds1998.blob.core.windows.net/downloads/security/banner.svg" width="100%" alt="SSMS Claude Chat security scan: live results of the latest scan. Click for the full report."></a>
+
 **SSMS Claude Chat** is a free add-in that puts a Claude AI chat window inside **SQL Server Management Studio
 (SSMS 21 and 22)**. Ask about your database in plain English, get stored procedures explained or written, fix slow
 queries and draw database diagrams. Nothing in your database changes until you click **Yes**.
@@ -9,6 +11,7 @@ queries and draw database diagrams. Nothing in your database changes until you c
 [Website & help](https://tanmays0406.github.io/ssms-claude-chat/) ·
 [How to install](https://tanmays0406.github.io/ssms-claude-chat/getting-started/) ·
 [FAQ](https://tanmays0406.github.io/ssms-claude-chat/faq/) ·
+[Security report](https://tanmays0406.github.io/ssms-claude-chat/security/) ·
 [Report a problem](https://github.com/TanmayS0406/ssms-claude-chat/issues) ·
 [♥ Sponsor](https://github.com/sponsors/TanmayS0406)
 
@@ -44,6 +47,7 @@ You need SSMS 21 or 22 on Windows, a Claude account and
 | [What it does](https://tanmays0406.github.io/ssms-claude-chat/features/) | Everything SSMS Claude Chat can do |
 | [Settings](https://tanmays0406.github.io/ssms-claude-chat/settings/) | Approvals for database changes, model, scripts folder |
 | [Themes](https://tanmays0406.github.io/ssms-claude-chat/themes/) | Colour themes and accent colours |
+| [Security report](https://tanmays0406.github.io/ssms-claude-chat/security/) | Live results of the daily security scans |
 | [FAQ](https://tanmays0406.github.io/ssms-claude-chat/faq/) | Cost, privacy, safety and fixes for common problems |
 
 ## About this repository
