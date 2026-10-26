@@ -13,7 +13,7 @@ is released.
 ## Supported versions
 
 Security fixes go into the newest release, available from the
-[download page](https://ssmsclaudechat.azurewebsites.net/). Please update before reporting.
+[download link](https://ssmsclaudechat-dl.azurewebsites.net/download). Please update before reporting.
 
 ## Security report
 

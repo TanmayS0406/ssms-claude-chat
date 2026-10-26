@@ -6,7 +6,7 @@
 (SSMS 21 and 22)**. Ask about your database in plain English, get stored procedures explained or written, fix slow
 queries and draw database diagrams. Nothing in your database changes until you click **Yes**.
 
-### [⬇ Download SSMS Claude Chat (free)](https://ssmsclaudechat.azurewebsites.net/)
+### [⬇ Download SSMS Claude Chat (free)](https://ssmsclaudechat-dl.azurewebsites.net/download)
 
 [Website & help](https://tanmays0406.github.io/ssms-claude-chat/) ·
 [How to install](https://tanmays0406.github.io/ssms-claude-chat/getting-started/) ·
@@ -32,7 +32,7 @@ queries and draw database diagrams. Nothing in your database changes until you c
 
 ## Get started in 3 steps
 
-1. [Download SSMS Claude Chat](https://ssmsclaudechat.azurewebsites.net/), close SSMS and run the setup.
+1. [Download SSMS Claude Chat](https://ssmsclaudechat-dl.azurewebsites.net/download), close SSMS and run the setup.
 2. In SSMS, click **View > SSMS Claude Chat**.
 3. Click **Sign in**, sign in with your Claude account, and ask a question.
 
