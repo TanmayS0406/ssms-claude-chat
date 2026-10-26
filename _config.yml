@@ -10,8 +10,8 @@ permalink: pretty
 markdown: kramdown
 lang: en
 
-# The download site always serves the newest setup, so this never needs updating.
-download_url: https://ssmsclaudechat.azurewebsites.net/
+# Azure Function that redirects to the newest setup, so this never needs updating.
+download_url: https://ssmsclaudechat-dl.azurewebsites.net/download
 
 repository_url: https://github.com/TanmayS0406/ssms-claude-chat
 issues_url: https://github.com/TanmayS0406/ssms-claude-chat/issues
