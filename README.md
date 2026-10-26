@@ -1,6 +1,6 @@
 # ✦ SSMS Claude Chat: Claude AI for SQL Server Management Studio
 
-<a href="https://tanmays0406.github.io/ssms-claude-chat/security/"><img src="https://sbsbuilds1998.blob.core.windows.net/downloads/security/banner.svg" width="100%" alt="SSMS Claude Chat security scan: live results of the latest scan. Click for the full report."></a>
+<a href="https://tanmays0406.github.io/ssms-claude-chat/security/"><img src="https://tanmays0406.github.io/ssms-claude-chat/security/banner.svg" width="100%" alt="SSMS Claude Chat security scan: live results of the latest scan. Click for the full report."></a>
 
 **SSMS Claude Chat** is a free add-in that puts a Claude AI chat window inside **SQL Server Management Studio
 (SSMS 21 and 22)**. Ask about your database in plain English, get stored procedures explained or written, fix slow
