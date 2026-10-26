@@ -1,9 +1,9 @@
 {
-  "generated": "2026-10-25T09:47:23Z",
+  "generated": "2026-10-26T09:07:54Z",
   "status": "pass",
   "commit": "a9551a6",
   "release": "v1.4.17",
-  "trigger": "push",
+  "trigger": "schedule",
   "signed": false,
   "checks": [
     {
