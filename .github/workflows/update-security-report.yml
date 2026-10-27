@@ -1,6 +1,7 @@
 # Copies the latest security report into the site. The extension's private repository scans every change and
 # daily, then publishes the summary (results and finding counts, never details) next to the downloads in blob
-# storage; this copies it into _data/ and security/ for https://tanmays0406.github.io/ssms-claude-chat/security/.
+# storage, where the download function serves it; this copies it into _data/ and security/ for
+# https://tanmays0406.github.io/ssms-claude-chat/security/.
 name: Update security report
 
 on:
@@ -28,7 +29,7 @@ jobs:
 
       - name: Download the report
         env:
-          BASE: https://sbsbuilds1998.blob.core.windows.net/downloads/security
+          BASE: https://ssmsclaudechat-dl.azurewebsites.net/security
         run: |
           mkdir -p _data security
           curl -fsSL "$BASE/security.json" -o /tmp/security.json
